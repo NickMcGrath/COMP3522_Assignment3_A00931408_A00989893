@@ -41,7 +41,8 @@ class PokedexMaker:
                     abilities=[cls._get_abilities(ability['ability']['name'])
                                for ability in json_response['abilities']],
                     move=[cls._get_move(move['move']['name']) for move in
-                          json_response['moves']]
+                          json_response['moves']],
+                    expanded=expanded
                 )
             else:
                 return Pokemon(
@@ -58,7 +59,8 @@ class PokedexMaker:
                     move=[(move['move']['name'],
                            move['version_group_details'][0][
                                'level_learned_at'])
-                          for move in json_response['moves']]
+                          for move in json_response['moves']],
+                    expanded=expanded
                 )
 
     @classmethod

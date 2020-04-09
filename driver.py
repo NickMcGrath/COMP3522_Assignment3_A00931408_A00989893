@@ -5,6 +5,8 @@ import requests
 import concurrent.futures
 import multiprocessing
 
+from prettytable import PrettyTable
+
 from pokedex_maker import PokedexMaker
 from pokeretriever.pokeretriever import *
 
@@ -128,11 +130,26 @@ class Report:
         self.formatter = formatter
 
     def export(self):
-        """
-        Export the report with the provided export method.
-        """
+
         self.formatter(self.pokedex_objects)
 
+    # def table_maker(self, title: str, data: list, labels: list,
+    #                 output_name, align: str) -> None:
+    #     """
+    #     Creates a txt table from provided information.
+    #     :param title: str
+    #     :param data: list of Series objects
+    #     :param labels: list
+    #     :param output_name: str
+    #     :param align: str
+    #     """
+    #     table = PrettyTable()
+    #     table.align = align
+    #     table.title = title
+    #     table.field_names = labels
+    #     for i in range(0, len(data[0])):
+    #         table.add_row([data[0][i], data[1][i]])
+    #     return str(table)
 
 class TerminalReporter:
     """

@@ -5,6 +5,7 @@ and houses the Pokemon, Ability, Move, and Stat classes.
 """
 import aiohttp
 
+
 class PokedexRequest:
     """
     Request has the values needed to make a request to get pokemon data.
@@ -42,7 +43,7 @@ class PokedexObject:
 
 class Pokemon(PokedexObject):
     def __init__(self, name: str, id_: int, height: int, weight: int, stats,
-                 types: list, abilities, move):
+                 types: list, abilities, move, expanded: bool):
         """
         :param height: int, the height of the Pokemon
         :param weight: int, the weight of the Pokemon
@@ -58,13 +59,57 @@ class Pokemon(PokedexObject):
         self.types = types
         self.abilities = abilities
         self.move = move
+        self.expanded = expanded
+
+    def types_str(self):
+        result = ''
+        for a_type in self.types:
+            result += f'\n\t\t{a_type}'
+        return result
+
+    def stats_str(self):
+        # if self.expanded:
+        #     return f'\n\t\t{self.stats}'
+        # else:
+        result = ''
+        for stat in self.stats:
+            result += f'\n\t\t{stat}'
+        return result
+
+    def abilities_str(self):
+        # if self.expanded:
+        #     return f'\n\t\t{self.abilities}'
+        # else:
+        result = '\n\t\t'
+        for ability in self.abilities:
+            ability = str(ability).replace('\n', "\n\t\t")
+            result += f'{ability}'
+        return result
+
+    def move_str(self):
+        # if self.expanded:
+        #     return f'\n\t\t{self.move}'
+        # else:
+        result = ''
+        for move in self.move:
+            result += f'\n\t\t{move}'
+        return result
 
     def __str__(self):
-        """Returns the current state of the Move"""
-        return f'Pokemon={str(vars(self))}'
+        """Returns the current state of the Pokemon"""
+        return f'Pokemon: {self.name} ' \
+               f'\n\tId: {self.id}' \
+               f'\n\tHeight: {self.height}' \
+               f'\n\tWeight: {self.weight}' \
+               f'\n\tStats: {self.stats_str()}' \
+               f'\n\tTypes: {self.types_str()}' \
+               f'\n\tAbility: {self.abilities_str()}' \
+               f'\n\tMoves: {self.move_str()}' \
+               f'\n\tExpanded: {self.expanded}'
 
 
 class Ability(PokedexObject):
+
     def __init__(self, name: str, id_: int, generation: str, effect: str,
                  effect_short: str, pokemon: list):
         """
@@ -79,17 +124,28 @@ class Ability(PokedexObject):
         self.generation = generation
         self.effect = effect
         self.effect_short = effect_short
-        self.pokemon = Pokemon
+        self.pokemon = pokemon
 
     def __str__(self):
         """Returns the current state of the Ability"""
-        return f'current state of Ability={str(vars(self))}'
+        effect = self.effect.replace("\n"," ")
+        effect_short = self.effect_short.replace('\n', ' ')
+        result = f'Name: {self.name}' \
+                 f'\nId: {self.id}' \
+                 f'\nGeneration: {self.generation}' \
+                 f'\nEffect: {effect}, ' \
+                 f'\nEffect short: {effect_short}' \
+                 f'\nPokemon:'
+        for pokemon in self.pokemon:
+            result += f' {pokemon}'
+        return result
 
 
 class Move(PokedexObject):
     """
     Moves are the skills of Pokemon in battle.
     """
+
     def __init__(self, name: str, id_: int, generation: str, accuracy: int,
                  pp: int, power: int, type_: str, damage_class: str,
                  effect_short: str):
@@ -125,6 +181,7 @@ class Stat(PokedexObject):
     about the stat of the Pokemon. The stat of the Pokemon grows as they gain
     levels.
     """
+
     def __init__(self, name: str, id_: int, is_battle_only: bool):
         """
         :param is_battle_only: bool, whether this stat only exists
