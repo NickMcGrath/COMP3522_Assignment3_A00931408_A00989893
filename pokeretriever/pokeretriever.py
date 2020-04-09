@@ -6,7 +6,7 @@ and houses the Pokemon, Ability, Move, and Stat classes.
 import aiohttp
 
 
-class Request:
+class PokedexRequest:
     """
     Request has the values needed to make a request to get pokemon data.
     """
@@ -42,11 +42,9 @@ class PokedexObject:
 
 
 class Pokemon(PokedexObject):
-    def __init__(self, name: str, id_: int, height: int, weight: int, stats,
-                 types: list, abilities, move):
-        """Initialize moves."""
-        self.name = name
-        self.id = id_
+    def __init__(self, height: int, weight: int, stats, types: list,
+                 abilities, move):
+        super().__init__()
         self.height = height
         self.weight = weight
         self.stats = stats
@@ -60,11 +58,9 @@ class Pokemon(PokedexObject):
 
 
 class Ability(PokedexObject):
-    def __init__(self, name: str, id_: int, generation: str, effect: str,
-                 effect_short: str, Pokemon: list):
-        """Initialize moves."""
-        self.name = name
-        self.id = id_
+    def __init__(self, generation: str, effect: str, effect_short: str,
+                 Pokemon: list):
+        super().__init__()
         self.generation = generation
         self.effect = effect
         self.effect_short = effect_short
@@ -78,12 +74,9 @@ class Ability(PokedexObject):
 class Move(PokedexObject):
     """Moves represents the moves of a specific pokemon."""
 
-    def __init__(self, name: str, id_: int, generation: str, accuracy: int,
-                 pp: int, power: int, type_: str, damage_class: str,
-                 effect_short: str):
-        """Initialize moves."""
-        self.name = name
-        self.id = id_
+    def __init__(self, generation: str, accuracy: int, pp: int, power: int,
+                 type_: str, damage_class: str, effect_short: str):
+        super().__init__()
         self.generation = generation
         self.accuracy = accuracy
         self.pp = pp
@@ -98,10 +91,9 @@ class Move(PokedexObject):
 
 
 class Stat(PokedexObject):
-    def __init__(self, name: str, id_: int, is_battle_only: bool):
+    def __init__(self, is_battle_only: bool):
         """Initialize moves."""
-        self.name = name
-        self.id = id_
+        super().__init__()
         self.is_battle_only = is_battle_only
 
     def __str__(self):
