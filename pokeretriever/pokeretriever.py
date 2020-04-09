@@ -5,13 +5,12 @@ and houses the Pokemon, Ability, Move, and Stat classes.
 """
 import aiohttp
 
-
 class PokedexRequest:
     """
     Request has the values needed to make a request to get pokemon data.
     """
 
-    def __init__(self, mode: str, name_or_id: str, expanded: bool, session):
+    def __init__(self, mode: str, name_or_id: str, expanded: bool):
         """
         Initialize a request.
         :param mode string (but wil be enum on final assignment)
@@ -24,7 +23,6 @@ class PokedexRequest:
         self.mode = mode
         self.name_or_id = name_or_id
         self.expanded = expanded
-        self.session = session
 
     def __str__(self):
         """Returns the current state of the request"""

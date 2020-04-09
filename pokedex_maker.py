@@ -13,10 +13,18 @@ class PokedexMaker:
 
     @classmethod
     def execute_request(cls, pokedex_request: PokedexRequest) -> PokedexObject:
-        pass
+        if pokedex_request.mode == 'pokemon':
+            return cls._get_pokemon(pokedex_request.name_or_id,
+                                    pokedex_request.expanded)
+        elif pokedex_request.mode == 'stat':
+            return cls._get_stats(pokedex_request.name_or_id)
+        elif pokedex_request.mode == 'ability':
+            return cls._get_abilities(pokedex_request.name_or_id)
+        elif pokedex_request.mode == 'move':
+            return cls._get_move(pokedex_request.name_or_id)
 
     @classmethod
-    def _get_pokemon(cls, name: str, expanded=True):
+    def _get_pokemon(cls, name: str, expanded=False):
         url = f'https://pokeapi.co/api/v2/pokemon/{name}'
         with cls.session.get(url) as response:
             json_response = response.json()
