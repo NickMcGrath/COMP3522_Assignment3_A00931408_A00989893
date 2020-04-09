@@ -6,18 +6,21 @@ and houses the Pokemon, Ability, Move, and Stat classes.
 import aiohttp
 
 
-class Pokemon:
+class PokedexObject:
     pass
 
 
-class Ability:
+class Pokemon(PokedexObject):
     pass
 
 
-class Move:
+class Ability(PokedexObject):
     pass
 
 
-class Stat:
+class Move(PokedexObject):
     pass
 
+
+class Stat(PokedexObject):
+    pass
