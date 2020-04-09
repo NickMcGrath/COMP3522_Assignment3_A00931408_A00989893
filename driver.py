@@ -3,6 +3,7 @@ import time
 import threading
 import requests
 import concurrent.futures
+import multiprocessing
 
 
 class Arguments:
@@ -78,10 +79,26 @@ class Driver:
     def start(self):
         self.arguments = ArgumentParser.setup_commandline_request()
 
-        if (self.arguments.input_file is not None):
+        if self.arguments.input_file is not None:
             name_id_list = self._get_name_id_list(self.arguments.input_file)
         else:
             name_id_list = self.arguments.input_data
+        pokedex_requests = list
+        for name_id in name_id_list:
+            pokedex_requests.append(PokedexRequest(#todo add params here))
+
+        tp = ThreadPool(pokedex_requests, multiprocessing.cpu_count())
+        self.pokedex_objects = tp.download()
+
+        if self.arguments.output_file is not None:
+            file_reporter = TextFileReporter(self.arguments.output_file)
+            report = Report(self.pokedex_objects, file_reporter.make_report)
+            report.export()
+        else:
+            terminal_reporter = TerminalReporter()
+            report = Report(self.pokedex_objects, terminal_reporter.make_report)
+            report.export()
+
 
 
     def _get_name_id_list(self, file_name) -> list:
@@ -127,7 +144,7 @@ class TerminalReporter:
             print(pokedex)
 
 
-class TextFileReport:
+class TextFileReporter:
     """
     Contains a make_report method to display all pokemon in a list in a
     text file.
