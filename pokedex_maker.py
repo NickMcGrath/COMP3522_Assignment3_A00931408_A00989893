@@ -62,6 +62,9 @@ class PokedexMaker:
                           for move in json_response['moves']],
                     expanded=expanded
                 )
+    @classmethod
+    def expanded_query(cls):
+        pass
 
     @classmethod
     def _get_stats(cls, name: str):

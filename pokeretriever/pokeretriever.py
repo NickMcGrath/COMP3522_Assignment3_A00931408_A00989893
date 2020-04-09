@@ -87,13 +87,16 @@ class Pokemon(PokedexObject):
         return result
 
     def move_str(self):
-        # if self.expanded:
-        #     return f'\n\t\t{self.move}'
-        # else:
-        result = ''
-        for move in self.move:
-            result += f'\n\t\t{move}'
-        return result
+        if self.expanded:
+            result = ''
+            for move in self.move:
+                result += f'\n\t\t{move}'
+            return result
+        else:
+            result = ''
+            for move in self.move:
+                result += f'\n\t\tName: {move[0]}, Level: {move[1]}'
+            return result
 
     def __str__(self):
         """Returns the current state of the Pokemon"""
