@@ -43,8 +43,16 @@ class PokedexObject:
 
 
 class Pokemon(PokedexObject):
-    def __init__(self, name: str, id_: int, height: int, weight: int, stats, types: list,
-                 abilities, move):
+    def __init__(self, name: str, id_: int, height: int, weight: int, stats,
+                 types: list, abilities, move):
+        """
+        :param height: int, the height of the Pokemon
+        :param weight: int, the weight of the Pokemon
+        :param stats: a list of stats the Pokemon has
+        :param types: a list of the types the Pokemon has
+        :param abilities: a list of the Pokemon's abilities
+        :param move: a list of the Pokemon's moves
+        """
         super().__init__(name, id_)
         self.height = height
         self.weight = weight
@@ -59,8 +67,16 @@ class Pokemon(PokedexObject):
 
 
 class Ability(PokedexObject):
-    def __init__(self, name: str, id_: int, generation: str, effect: str, effect_short: str,
-                 Pokemon: list):
+    def __init__(self, name: str, id_: int, generation: str, effect: str,
+                 effect_short: str, Pokemon: list):
+        """
+        :param generation: str, the generation in which the move was
+        introduced
+        :param effect: str, the effect of the ability
+        :param effect_short: str, a short description of the Pokemon's effect
+        :param Pokemon: list, a list of Pokemon that could potentially have
+        this ability
+        """
         super().__init__(name, id_)
         self.generation = generation
         self.effect = effect
@@ -68,14 +84,29 @@ class Ability(PokedexObject):
         self.Pokemon = Pokemon
 
     def __str__(self):
-        """Returns the current state of the Move"""
+        """Returns the current state of the Ability"""
         return f'current state of Ability={str(vars(self))}'
 
 
 class Move(PokedexObject):
-    """Moves represents the moves of a specific pokemon."""
-    def __init__(self, name: str, id_: int, generation: str, accuracy: int, pp: int, power: int,
-                 type_: str, damage_class: str, effect_short: str):
+    """
+    Moves are the skills of Pokemon in battle.
+    """
+    def __init__(self, name: str, id_: int, generation: str, accuracy: int,
+                 pp: int, power: int, type_: str, damage_class: str,
+                 effect_short: str):
+        """
+        :param generation: str, the generation in which the move was
+        introduced
+        :param accuracy: int, percent value of how successful the move is
+        :param pp: int, power points, the number of times the move can be
+        used
+        :param power: int, the base power of the move
+        :param type_: str, the elemental type of the move
+        :param damage_class: str, the type of damage the move inflicts on the
+        target
+        :param effect_short: str, a short description of the Pokemon's effect
+        """
         super().__init__(name, id_)
         self.generation = generation
         self.accuracy = accuracy
@@ -91,8 +122,16 @@ class Move(PokedexObject):
 
 
 class Stat(PokedexObject):
+    """
+    Pokemon queries in the expanded mode allows the user to query more details
+    about the stat of the Pokemon. The stat of the Pokemon grows as they gain
+    levels.
+    """
     def __init__(self, name: str, id_: int, is_battle_only: bool):
-        """Initialize moves."""
+        """
+        :param is_battle_only: bool, whether this stat only exists
+        within a battle
+        """
         super().__init__(name, id_)
         self.is_battle_only = is_battle_only
 
