@@ -5,6 +5,8 @@ import requests
 import concurrent.futures
 import multiprocessing
 
+from pokedex_maker import PokedexMaker
+
 
 class Arguments:
     """
@@ -76,29 +78,29 @@ class Driver:
         self.pokedex_objects = None  # PokedexObject
         self.arguments = None  # Arguments
 
-    def start(self):
-        self.arguments = ArgumentParser.setup_commandline_request()
-
-        if self.arguments.input_file is not None:
-            name_id_list = self._get_name_id_list(self.arguments.input_file)
-        else:
-            name_id_list = self.arguments.input_data
-        pokedex_requests = list
-        for name_id in name_id_list:
-            pokedex_requests.append(PokedexRequest(  # todo add params here))
-
-                tp=ThreadPool(pokedex_requests, multiprocessing.cpu_count())
-            self.pokedex_objects = tp.download()
-
-            if self.arguments.output_file is not None:
-                file_reporter = TextFileReporter(self.arguments.output_file)
-            report = Report(self.pokedex_objects, file_reporter.make_report)
-            report.export()
-            else:
-            terminal_reporter = TerminalReporter()
-            report = Report(self.pokedex_objects,
-                            terminal_reporter.make_report)
-            report.export()
+    # def start(self):
+    #     self.arguments = ArgumentParser.setup_commandline_request()
+    #
+    #     if self.arguments.input_file is not None:
+    #         name_id_list = self._get_name_id_list(self.arguments.input_file)
+    #     else:
+    #         name_id_list = self.arguments.input_data
+    #     pokedex_requests = list
+    #     for name_id in name_id_list:
+    #         pokedex_requests.append(PokedexRequest(  # todo add params here))
+    #
+    #             tp=ThreadPool(pokedex_requests, multiprocessing.cpu_count())
+    #         self.pokedex_objects = tp.download()
+    #
+    #         if self.arguments.output_file is not None:
+    #             file_reporter = TextFileReporter(self.arguments.output_file)
+    #         report = Report(self.pokedex_objects, file_reporter.make_report)
+    #         report.export()
+    #         else:
+    #         terminal_reporter = TerminalReporter()
+    #         report = Report(self.pokedex_objects,
+    #                         terminal_reporter.make_report)
+    #         report.export()
 
     def _get_name_id_list(self, file_name) -> list:
         with open(file_name, mode='r', encoding='utf-8') as file:
@@ -168,9 +170,9 @@ class ThreadPool:
         with concurrent.futures.ThreadPoolExecutor(
                 max_workers=self.max_workers) as executor:
             with requests.Session() as session:
-            pokedex_maker = PokedexMaker()
+                pokedex_maker = PokedexMaker(session)
 
-            result = executor.map(pokedex_maker.execute_request,
+                result = executor.map(pokedex_maker.execute_request,
                                   self.pokedex_requests)
 
         return list(result)
