@@ -5,6 +5,9 @@ import requests
 import concurrent.futures
 import multiprocessing
 
+from pokedex_maker import PokedexMaker
+from pokeretriever.pokeretriever import PokedexRequest
+
 
 class Arguments:
     """
