@@ -16,8 +16,9 @@ class PokedexRequest:
         Initialize a request.
         :param mode string (but wil be enum on final assignment)
         name of the id of the object being queried
-        :param name_or_id
-        :param expanded bool
+        :param name_or_id the name or id number of the Pokemon
+        :param expanded bool an optional flag that prompts the pokedex to do a
+        sub-query to get more information about a particular attribute
         :param session
         """
         self.mode = mode
@@ -42,9 +43,9 @@ class PokedexObject:
 
 
 class Pokemon(PokedexObject):
-    def __init__(self, height: int, weight: int, stats, types: list,
+    def __init__(self, name: str, id_: int, height: int, weight: int, stats, types: list,
                  abilities, move):
-        super().__init__()
+        super().__init__(name, id_)
         self.height = height
         self.weight = weight
         self.stats = stats
@@ -58,9 +59,9 @@ class Pokemon(PokedexObject):
 
 
 class Ability(PokedexObject):
-    def __init__(self, generation: str, effect: str, effect_short: str,
+    def __init__(self, name: str, id_: int, generation: str, effect: str, effect_short: str,
                  Pokemon: list):
-        super().__init__()
+        super().__init__(name, id_)
         self.generation = generation
         self.effect = effect
         self.effect_short = effect_short
@@ -73,10 +74,9 @@ class Ability(PokedexObject):
 
 class Move(PokedexObject):
     """Moves represents the moves of a specific pokemon."""
-
-    def __init__(self, generation: str, accuracy: int, pp: int, power: int,
+    def __init__(self, name: str, id_: int, generation: str, accuracy: int, pp: int, power: int,
                  type_: str, damage_class: str, effect_short: str):
-        super().__init__()
+        super().__init__(name, id_)
         self.generation = generation
         self.accuracy = accuracy
         self.pp = pp
@@ -91,9 +91,9 @@ class Move(PokedexObject):
 
 
 class Stat(PokedexObject):
-    def __init__(self, is_battle_only: bool):
+    def __init__(self, name: str, id_: int, is_battle_only: bool):
         """Initialize moves."""
-        super().__init__()
+        super().__init__(name, id_)
         self.is_battle_only = is_battle_only
 
     def __str__(self):
