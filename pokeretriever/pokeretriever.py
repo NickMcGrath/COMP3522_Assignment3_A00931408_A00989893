@@ -6,7 +6,7 @@ and houses the Pokemon, Ability, Move, and Stat classes.
 import aiohttp
 
 
-class Request:
+class PokedexRequest:
     """
     Request has the values needed to make a request to get pokemon data.
     """
