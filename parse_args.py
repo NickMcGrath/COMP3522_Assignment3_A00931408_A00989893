@@ -5,33 +5,6 @@ make an object.
 import argparse
 
 
-class Request:
-    """
-    Request has the values needed to make a request to get pokemon data.
-    """
-
-    def __init__(self, mode: str, input_data: str, expanded: bool,
-                 input_file: str = None, output_file: str = None):
-        """
-        Initialize a request.
-        :param mode string (but wil be enum on final assignment)
-        :param input_data str, data of the intended request, usually the
-        name of the id of the object being queried
-        :param expanded bool
-        :param input_file str, name relative path of the input file
-        :param output_file, str, data of the output file
-        """
-        self.mode = mode
-        self.input_data = input_data
-        self.expanded = expanded
-        self.input_file = input_file
-        self.output_file = output_file
-
-    def __str__(self):
-        """Returns the current state of the request"""
-        return f'current state of Request={str(vars(self))}'
-
-
 class ArgumentParser:
     """
     ArgumentParser deals with commandline arguments.
