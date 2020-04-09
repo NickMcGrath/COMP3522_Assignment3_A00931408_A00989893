@@ -29,19 +29,35 @@ class PokedexMaker:
         with cls.session.get(url) as response:
             json_response = response.json()
             if expanded:
+                with concurrent.futures.ThreadPoolExecutor(
+                        max_workers=10) as executor:
+                    stats_param = [stat['stat']['name'] for stat in
+                                   json_response['stats']]
+                    stats_list = list(
+                        executor.map(cls._get_stats,
+                                     stats_param))
+                    abilities_param = [ability['ability']['name']
+                                       for ability in
+                                       json_response['abilities']]
+                    ability_list = list(
+                        executor.map(cls._get_abilities,
+                                     abilities_param))
+                    moves_param = [move['move']['name'] for move in
+                                   json_response['moves']]
+                    moves_list = list(
+                        executor.map(cls._get_move,
+                                     moves_param))
+
                 return Pokemon(
                     name=json_response['name'],
                     id_=json_response['id'],
                     height=json_response['height'],
                     weight=json_response['weight'],
-                    stats=[cls._get_stats(stat['stat']['name']) for stat in
-                           json_response['stats']],
+                    stats=stats_list,
                     types=[a_type['type']['name'] for a_type
                            in json_response['types']],
-                    abilities=[cls._get_abilities(ability['ability']['name'])
-                               for ability in json_response['abilities']],
-                    move=[cls._get_move(move['move']['name']) for move in
-                          json_response['moves']],
+                    abilities=ability_list,
+                    move=moves_list,
                     expanded=expanded
                 )
             else:
@@ -62,9 +78,6 @@ class PokedexMaker:
                           for move in json_response['moves']],
                     expanded=expanded
                 )
-    @classmethod
-    def expanded_query(cls):
-        pass
 
     @classmethod
     def _get_stats(cls, name: str):
