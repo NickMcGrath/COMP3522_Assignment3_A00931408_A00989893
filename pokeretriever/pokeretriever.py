@@ -68,7 +68,7 @@ class Pokemon(PokedexObject):
 
 class Ability(PokedexObject):
     def __init__(self, name: str, id_: int, generation: str, effect: str,
-                 effect_short: str, Pokemon: list):
+                 effect_short: str, pokemon: list):
         """
         :param generation: str, the generation in which the move was
         introduced
@@ -81,7 +81,7 @@ class Ability(PokedexObject):
         self.generation = generation
         self.effect = effect
         self.effect_short = effect_short
-        self.Pokemon = Pokemon
+        self.pokemon = Pokemon
 
     def __str__(self):
         """Returns the current state of the Ability"""
