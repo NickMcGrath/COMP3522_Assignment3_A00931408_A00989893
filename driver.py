@@ -111,7 +111,7 @@ class Driver:
 
     def _get_name_id_list(self, file_name) -> list:
         with open(file_name, mode='r', encoding='utf-8') as file:
-            return [line for line in file]
+            return [line.strip('\n') for line in file]
 
 
 class Report:
@@ -180,7 +180,7 @@ class TextFileReporter:
     def make_report(self, pokedex_objects: list):
         with open(self.file_name, 'w') as file:
             for pokedex in pokedex_objects:
-                file.write(pokedex)
+                file.write(str(pokedex))
 
 
 class ThreadPool:

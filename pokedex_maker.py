@@ -33,20 +33,17 @@ class PokedexMaker:
                         max_workers=10) as executor:
                     stats_param = [stat['stat']['name'] for stat in
                                    json_response['stats']]
-                    stats_list = list(
-                        executor.map(cls._get_stats,
-                                     stats_param))
+                    stats_list = list(executor.map(cls._get_stats,
+                                                   stats_param))
                     abilities_param = [ability['ability']['name']
                                        for ability in
                                        json_response['abilities']]
-                    ability_list = list(
-                        executor.map(cls._get_abilities,
-                                     abilities_param))
+                    ability_list = list(executor.map(cls._get_abilities,
+                                                     abilities_param))
                     moves_param = [move['move']['name'] for move in
                                    json_response['moves']]
-                    moves_list = list(
-                        executor.map(cls._get_move,
-                                     moves_param))
+                    moves_list = list(executor.map(cls._get_move,
+                                                   moves_param))
 
                 return Pokemon(
                     name=json_response['name'],
