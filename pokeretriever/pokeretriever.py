@@ -65,32 +65,34 @@ class Pokemon(PokedexObject):
     def types_str(self):
         result = ''
         for a_type in self.types:
-            result += f'\n\t\t{a_type}'
+            result += f'\n\t\t Name: {a_type}'
         return result
 
     def stats_str(self):
-        # if self.expanded:
-        #     return f'\n\t\t{self.stats}'
-        # else:
         result = ''
-        for stat in self.stats:
-            result += f'\n\t\t{stat}'
-        return result
+        if self.expanded:
+            for stat in self.stats:
+                stat = str(stat).replace('\n', "\n\t\t")
+                result += f'\n\t\t{stat}'
+            return result
 
     def abilities_str(self):
-        # if self.expanded:
-        #     return f'\n\t\t{self.abilities}'
-        # else:
-        result = '\n\t\t'
-        for ability in self.abilities:
-            ability = str(ability).replace('\n', "\n\t\t")
-            result += f'{ability}'
-        return result
+        result = ''
+        if self.expanded:
+            for ability in self.abilities:
+                ability = str(ability).replace('\n', "\n\t\t")
+                result += f'{ability}'
+            return result
+        else:
+            for ability in self.abilities:
+                result += f'\n\t\tName: {ability}'
+            return result
 
     def move_str(self):
+        result = ''
         if self.expanded:
-            result = ''
             for move in self.move:
+                move = str(move).replace('\n', "\n\t\t")
                 result += f'\n\t\t{move}'
             return result
         else:
@@ -134,7 +136,7 @@ class Ability(PokedexObject):
         """Returns the current state of the Ability"""
         effect = self.effect.replace("\n", " ")
         effect_short = self.effect_short.replace('\n', ' ')
-        result = f'Name: {self.name}' \
+        result = f'\nName: {self.name}' \
                  f'\nId: {self.id}' \
                  f'\nGeneration: {self.generation}' \
                  f'\nEffect: {effect}, ' \
@@ -176,7 +178,17 @@ class Move(PokedexObject):
 
     def __str__(self):
         """Returns the current state of the Move"""
-        return f'current state of Moves={str(vars(self))}'
+        effect_short = self.effect_short.replace('\n', ' ')
+        result = f'\nName: {self.name}' \
+                 f'\nId: {self.id}' \
+                 f'\nGeneration: {self.generation}' \
+                 f'\nAccuracy: {self.accuracy}' \
+                 f'\nPP: {self.pp}' \
+                 f'\nPower: {self.power}' \
+                 f'\nType: {self.type}' \
+                 f'\nDamage Class: {self.damage_class}' \
+                 f'\nEffect Short: {self.effect_short}'
+        return result
 
 
 class Stat(PokedexObject):
@@ -196,4 +208,7 @@ class Stat(PokedexObject):
 
     def __str__(self):
         """Returns the current state of the Move"""
-        return f'current state of Stat={str(vars(self))}'
+        result = f'\nName: {self.name}' \
+                 f'\nID: {self.id}' \
+                 f'\nBattle only: {self.is_battle_only}'
+        return result

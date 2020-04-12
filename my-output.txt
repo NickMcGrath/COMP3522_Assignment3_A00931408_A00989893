@@ -1,199 +1,51 @@
-Pokemon: ivysaur 
-	Id: 2
-	Height: 10
-	Weight: 130
-	Stats: 
-		current state of Stat={'name': 'speed', 'id': 6, 'is_battle_only': False}
-		current state of Stat={'name': 'special-defense', 'id': 5, 'is_battle_only': False}
-		current state of Stat={'name': 'special-attack', 'id': 4, 'is_battle_only': False}
-		current state of Stat={'name': 'defense', 'id': 3, 'is_battle_only': False}
-		current state of Stat={'name': 'attack', 'id': 2, 'is_battle_only': False}
-		current state of Stat={'name': 'hp', 'id': 1, 'is_battle_only': False}
-	Types: 
-		poison
-		grass
-	Ability: 
-		Name: chlorophyll
-		Id: 34
-		Generation: generation-iii
-		Effect: This Pokémon's Speed is doubled during strong sunlight.  This bonus does not count as a stat modifier., 
-		Effect short: Doubles Speed during strong sunlight.
-		Pokemon: bulbasaur ivysaur venusaur oddish gloom vileplume bellsprout weepinbell victreebel exeggcute exeggutor tangela bellossom hoppip skiploom jumpluff sunkern sunflora seedot nuzleaf shiftry tropius cherubi tangrowth leafeon sewaddle swadloon leavanny cottonee whimsicott petilil lilligant maractus deerling sawsbuckName: overgrow
-		Id: 65
-		Generation: generation-iii
-		Effect: When this Pokémon has 1/3 or less of its HP remaining, its grass-type moves inflict 1.5× as much regular damage., 
-		Effect short: Strengthens grass moves to inflict 1.5× damage at 1/3 max HP or less.
-		Pokemon: bulbasaur ivysaur venusaur chikorita bayleef meganium treecko grovyle sceptile turtwig grotle torterra snivy servine serperior pansage simisage chespin quilladin chesnaught rowlet dartrix decidueye
-	Moves: 
-		current state of Moves={'name': 'swords-dance', 'id': 14, 'generation': 'generation-i', 'accuracy': None, 'pp': 20, 'power': None, 'type': 'normal', 'damage_class': 'status', 'effect_short': "Raises the user's Attack by two stages."}
-		current state of Moves={'name': 'cut', 'id': 15, 'generation': 'generation-i', 'accuracy': 95, 'pp': 30, 'power': 50, 'type': 'normal', 'damage_class': 'physical', 'effect_short': 'Inflicts regular damage with no additional effect.'}
-		current state of Moves={'name': 'bind', 'id': 20, 'generation': 'generation-i', 'accuracy': 85, 'pp': 20, 'power': 15, 'type': 'normal', 'damage_class': 'physical', 'effect_short': 'Prevents the target from fleeing and inflicts damage for 2-5 turns.'}
-		current state of Moves={'name': 'vine-whip', 'id': 22, 'generation': 'generation-i', 'accuracy': 100, 'pp': 25, 'power': 45, 'type': 'grass', 'damage_class': 'physical', 'effect_short': 'Inflicts regular damage with no additional effect.'}
-		current state of Moves={'name': 'headbutt', 'id': 29, 'generation': 'generation-i', 'accuracy': 100, 'pp': 15, 'power': 70, 'type': 'normal', 'damage_class': 'physical', 'effect_short': 'Has a $effect_chance% chance to make the target flinch.'}
-		current state of Moves={'name': 'tackle', 'id': 33, 'generation': 'generation-i', 'accuracy': 100, 'pp': 35, 'power': 40, 'type': 'normal', 'damage_class': 'physical', 'effect_short': 'Inflicts regular damage with no additional effect.'}
-		current state of Moves={'name': 'body-slam', 'id': 34, 'generation': 'generation-i', 'accuracy': 100, 'pp': 15, 'power': 85, 'type': 'normal', 'damage_class': 'physical', 'effect_short': 'Has a $effect_chance% chance to paralyze the target.'}
-		current state of Moves={'name': 'take-down', 'id': 36, 'generation': 'generation-i', 'accuracy': 85, 'pp': 20, 'power': 90, 'type': 'normal', 'damage_class': 'physical', 'effect_short': 'User receives 1/4 the damage it inflicts in recoil.'}
-		current state of Moves={'name': 'double-edge', 'id': 38, 'generation': 'generation-i', 'accuracy': 100, 'pp': 15, 'power': 120, 'type': 'normal', 'damage_class': 'physical', 'effect_short': 'User receives 1/3 the damage inflicted in recoil.'}
-		current state of Moves={'name': 'growl', 'id': 45, 'generation': 'generation-i', 'accuracy': 100, 'pp': 40, 'power': None, 'type': 'normal', 'damage_class': 'status', 'effect_short': "Lowers the target's Attack by one stage."}
-		current state of Moves={'name': 'strength', 'id': 70, 'generation': 'generation-i', 'accuracy': 100, 'pp': 15, 'power': 80, 'type': 'normal', 'damage_class': 'physical', 'effect_short': 'Inflicts regular damage with no additional effect.'}
-		current state of Moves={'name': 'mega-drain', 'id': 72, 'generation': 'generation-i', 'accuracy': 100, 'pp': 15, 'power': 40, 'type': 'grass', 'damage_class': 'special', 'effect_short': 'Drains half the damage inflicted to heal the user.'}
-		current state of Moves={'name': 'leech-seed', 'id': 73, 'generation': 'generation-i', 'accuracy': 90, 'pp': 10, 'power': None, 'type': 'grass', 'damage_class': 'status', 'effect_short': 'Seeds the target, stealing HP from it every turn.'}
-		current state of Moves={'name': 'growth', 'id': 74, 'generation': 'generation-i', 'accuracy': None, 'pp': 20, 'power': None, 'type': 'normal', 'damage_class': 'status', 'effect_short': "Raises the user's Attack and Special Attack by one stage."}
-		current state of Moves={'name': 'razor-leaf', 'id': 75, 'generation': 'generation-i', 'accuracy': 95, 'pp': 25, 'power': 55, 'type': 'grass', 'damage_class': 'physical', 'effect_short': 'Has an increased chance for a critical hit.'}
-		current state of Moves={'name': 'solar-beam', 'id': 76, 'generation': 'generation-i', 'accuracy': 100, 'pp': 10, 'power': 120, 'type': 'grass', 'damage_class': 'special', 'effect_short': 'Requires a turn to charge before attacking.'}
-		current state of Moves={'name': 'poison-powder', 'id': 77, 'generation': 'generation-i', 'accuracy': 75, 'pp': 35, 'power': None, 'type': 'poison', 'damage_class': 'status', 'effect_short': 'Poisons the target.'}
-		current state of Moves={'name': 'sleep-powder', 'id': 79, 'generation': 'generation-i', 'accuracy': 75, 'pp': 15, 'power': None, 'type': 'grass', 'damage_class': 'status', 'effect_short': 'Puts the target to sleep.'}
-		current state of Moves={'name': 'string-shot', 'id': 81, 'generation': 'generation-i', 'accuracy': 95, 'pp': 40, 'power': None, 'type': 'bug', 'damage_class': 'status', 'effect_short': "Lowers the target's Speed by two stages."}
-		current state of Moves={'name': 'toxic', 'id': 92, 'generation': 'generation-i', 'accuracy': 90, 'pp': 10, 'power': None, 'type': 'poison', 'damage_class': 'status', 'effect_short': 'Badly poisons the target, inflicting more damage every turn.'}
-		current state of Moves={'name': 'rage', 'id': 99, 'generation': 'generation-i', 'accuracy': 100, 'pp': 20, 'power': 20, 'type': 'normal', 'damage_class': 'physical', 'effect_short': 'If the user is hit after using this move, its Attack rises by one stage.'}
-		current state of Moves={'name': 'mimic', 'id': 102, 'generation': 'generation-i', 'accuracy': None, 'pp': 10, 'power': None, 'type': 'normal', 'damage_class': 'status', 'effect_short': "Copies the target's last used move."}
-		current state of Moves={'name': 'double-team', 'id': 104, 'generation': 'generation-i', 'accuracy': None, 'pp': 15, 'power': None, 'type': 'normal', 'damage_class': 'status', 'effect_short': "Raises the user's evasion by one stage."}
-		current state of Moves={'name': 'defense-curl', 'id': 111, 'generation': 'generation-i', 'accuracy': None, 'pp': 40, 'power': None, 'type': 'normal', 'damage_class': 'status', 'effect_short': "Raises user's Defense by one stage."}
-		current state of Moves={'name': 'light-screen', 'id': 113, 'generation': 'generation-i', 'accuracy': None, 'pp': 30, 'power': None, 'type': 'psychic', 'damage_class': 'status', 'effect_short': 'Reduces damage from special attacks by 50% for five turns.'}
-		current state of Moves={'name': 'reflect', 'id': 115, 'generation': 'generation-i', 'accuracy': None, 'pp': 20, 'power': None, 'type': 'psychic', 'damage_class': 'status', 'effect_short': 'Reduces damage from physical attacks by half.'}
-		current state of Moves={'name': 'bide', 'id': 117, 'generation': 'generation-i', 'accuracy': None, 'pp': 10, 'power': None, 'type': 'normal', 'damage_class': 'physical', 'effect_short': 'User waits for two turns, then hits back for twice the damage it took.'}
-		current state of Moves={'name': 'flash', 'id': 148, 'generation': 'generation-i', 'accuracy': 100, 'pp': 20, 'power': None, 'type': 'normal', 'damage_class': 'status', 'effect_short': "Lowers the target's accuracy by one stage."}
-		current state of Moves={'name': 'rest', 'id': 156, 'generation': 'generation-i', 'accuracy': None, 'pp': 10, 'power': None, 'type': 'psychic', 'damage_class': 'status', 'effect_short': 'User sleeps for two turns, completely healing itself.'}
-		current state of Moves={'name': 'substitute', 'id': 164, 'generation': 'generation-i', 'accuracy': None, 'pp': 10, 'power': None, 'type': 'normal', 'damage_class': 'status', 'effect_short': "Transfers 1/4 of the user's max HP into a doll, protecting the user from further damage or status changes until it breaks."}
-		current state of Moves={'name': 'snore', 'id': 173, 'generation': 'generation-ii', 'accuracy': 100, 'pp': 15, 'power': 50, 'type': 'normal', 'damage_class': 'special', 'effect_short': 'Has a $effect_chance% chance to make the target flinch.  Only works if the user is sleeping.'}
-		current state of Moves={'name': 'curse', 'id': 174, 'generation': 'generation-ii', 'accuracy': None, 'pp': 10, 'power': None, 'type': 'ghost', 'damage_class': 'status', 'effect_short': 'Ghosts pay half their max HP to hurt the target every turn.  Others decrease Speed but raise Attack and Defense.'}
-		current state of Moves={'name': 'protect', 'id': 182, 'generation': 'generation-ii', 'accuracy': None, 'pp': 10, 'power': None, 'type': 'normal', 'damage_class': 'status', 'effect_short': 'Prevents any moves from hitting the user this turn.'}
-		current state of Moves={'name': 'sludge-bomb', 'id': 188, 'generation': 'generation-ii', 'accuracy': 100, 'pp': 10, 'power': 90, 'type': 'poison', 'damage_class': 'special', 'effect_short': 'Has a $effect_chance% chance to poison the target.'}
-		current state of Moves={'name': 'mud-slap', 'id': 189, 'generation': 'generation-ii', 'accuracy': 100, 'pp': 10, 'power': 20, 'type': 'ground', 'damage_class': 'special', 'effect_short': "Has a $effect_chance% chance to lower the target's accuracy by one stage."}
-		current state of Moves={'name': 'giga-drain', 'id': 202, 'generation': 'generation-ii', 'accuracy': 100, 'pp': 10, 'power': 75, 'type': 'grass', 'damage_class': 'special', 'effect_short': 'Drains half the damage inflicted to heal the user.'}
-		current state of Moves={'name': 'endure', 'id': 203, 'generation': 'generation-ii', 'accuracy': None, 'pp': 10, 'power': None, 'type': 'normal', 'damage_class': 'status', 'effect_short': "Prevents the user's HP from lowering below 1 this turn."}
-		current state of Moves={'name': 'swagger', 'id': 207, 'generation': 'generation-ii', 'accuracy': 85, 'pp': 15, 'power': None, 'type': 'normal', 'damage_class': 'status', 'effect_short': "Raises the target's Attack by two stages and confuses the target."}
-		current state of Moves={'name': 'fury-cutter', 'id': 210, 'generation': 'generation-ii', 'accuracy': 95, 'pp': 20, 'power': 40, 'type': 'bug', 'damage_class': 'physical', 'effect_short': 'Power doubles every turn this move is used in succession after the first, maxing out after five turns.'}
-		current state of Moves={'name': 'attract', 'id': 213, 'generation': 'generation-ii', 'accuracy': 100, 'pp': 15, 'power': None, 'type': 'normal', 'damage_class': 'status', 'effect_short': 'Target falls in love if it has the opposite gender, and has a 50% chance to refuse attacking the user.'}
-		current state of Moves={'name': 'sleep-talk', 'id': 214, 'generation': 'generation-ii', 'accuracy': None, 'pp': 10, 'power': None, 'type': 'normal', 'damage_class': 'status', 'effect_short': "Randomly uses one of the user's other three moves.  Only works if the user is sleeping."}
-		current state of Moves={'name': 'return', 'id': 216, 'generation': 'generation-ii', 'accuracy': 100, 'pp': 20, 'power': None, 'type': 'normal', 'damage_class': 'physical', 'effect_short': 'Power increases with happiness, up to a maximum of 102.'}
-		current state of Moves={'name': 'frustration', 'id': 218, 'generation': 'generation-ii', 'accuracy': 100, 'pp': 20, 'power': None, 'type': 'normal', 'damage_class': 'physical', 'effect_short': 'Power increases as happiness decreases, up to a maximum of 102.'}
-		current state of Moves={'name': 'safeguard', 'id': 219, 'generation': 'generation-ii', 'accuracy': None, 'pp': 25, 'power': None, 'type': 'normal', 'damage_class': 'status', 'effect_short': "Protects the user's field from major status ailments and confusion for five turns."}
-		current state of Moves={'name': 'sweet-scent', 'id': 230, 'generation': 'generation-ii', 'accuracy': 100, 'pp': 20, 'power': None, 'type': 'normal', 'damage_class': 'status', 'effect_short': "Lowers the target's evasion by one stage."}
-		current state of Moves={'name': 'synthesis', 'id': 235, 'generation': 'generation-ii', 'accuracy': None, 'pp': 5, 'power': None, 'type': 'grass', 'damage_class': 'status', 'effect_short': 'Heals the user by half its max HP.  Affected by weather.'}
-		current state of Moves={'name': 'hidden-power', 'id': 237, 'generation': 'generation-ii', 'accuracy': 100, 'pp': 15, 'power': 60, 'type': 'normal', 'damage_class': 'special', 'effect_short': "Power and type depend upon user's IVs.  Power can range from 30 to 70."}
-		current state of Moves={'name': 'sunny-day', 'id': 241, 'generation': 'generation-ii', 'accuracy': None, 'pp': 5, 'power': None, 'type': 'fire', 'damage_class': 'status', 'effect_short': 'Changes the weather to sunny for five turns.'}
-		current state of Moves={'name': 'rock-smash', 'id': 249, 'generation': 'generation-ii', 'accuracy': 100, 'pp': 15, 'power': 40, 'type': 'fighting', 'damage_class': 'physical', 'effect_short': "Has a $effect_chance% chance to lower the target's Defense by one stage."}
-		current state of Moves={'name': 'facade', 'id': 263, 'generation': 'generation-iii', 'accuracy': 100, 'pp': 20, 'power': 70, 'type': 'normal', 'damage_class': 'physical', 'effect_short': 'Power doubles if user is burned, paralyzed, or poisoned.'}
-		current state of Moves={'name': 'nature-power', 'id': 267, 'generation': 'generation-iii', 'accuracy': None, 'pp': 20, 'power': None, 'type': 'normal', 'damage_class': 'status', 'effect_short': 'Uses a move which depends upon the terrain.'}
-		current state of Moves={'name': 'knock-off', 'id': 282, 'generation': 'generation-iii', 'accuracy': 100, 'pp': 20, 'power': 65, 'type': 'dark', 'damage_class': 'physical', 'effect_short': 'Target drops its held item.'}
-		current state of Moves={'name': 'secret-power', 'id': 290, 'generation': 'generation-iii', 'accuracy': 100, 'pp': 20, 'power': 70, 'type': 'normal', 'damage_class': 'physical', 'effect_short': 'Has a $effect_chance% chance to inflict a status effect which depends upon the terrain.'}
-		current state of Moves={'name': 'bullet-seed', 'id': 331, 'generation': 'generation-iii', 'accuracy': 100, 'pp': 30, 'power': 25, 'type': 'grass', 'damage_class': 'physical', 'effect_short': 'Hits 2-5 times in one turn.'}
-		current state of Moves={'name': 'natural-gift', 'id': 363, 'generation': 'generation-iv', 'accuracy': 100, 'pp': 15, 'power': None, 'type': 'normal', 'damage_class': 'physical', 'effect_short': 'Power and type depend on the held berry.'}
-		current state of Moves={'name': 'worry-seed', 'id': 388, 'generation': 'generation-iv', 'accuracy': 100, 'pp': 10, 'power': None, 'type': 'grass', 'damage_class': 'status', 'effect_short': "Changes the target's ability to Insomnia."}
-		current state of Moves={'name': 'seed-bomb', 'id': 402, 'generation': 'generation-iv', 'accuracy': 100, 'pp': 15, 'power': 80, 'type': 'grass', 'damage_class': 'physical', 'effect_short': 'Inflicts regular damage with no additional effect.'}
-		current state of Moves={'name': 'energy-ball', 'id': 412, 'generation': 'generation-iv', 'accuracy': 100, 'pp': 10, 'power': 90, 'type': 'grass', 'damage_class': 'special', 'effect_short': "Has a $effect_chance% chance to lower the target's Special Defense by one stage."}
-		current state of Moves={'name': 'captivate', 'id': 445, 'generation': 'generation-iv', 'accuracy': 100, 'pp': 20, 'power': None, 'type': 'normal', 'damage_class': 'status', 'effect_short': "Lowers the target's Special Attack by two stages if it's the opposite gender."}
-		current state of Moves={'name': 'grass-knot', 'id': 447, 'generation': 'generation-iv', 'accuracy': 100, 'pp': 20, 'power': None, 'type': 'grass', 'damage_class': 'special', 'effect_short': 'Inflicts more damage to heavier targets, with a maximum of 120 power.'}
-		current state of Moves={'name': 'venoshock', 'id': 474, 'generation': 'generation-v', 'accuracy': 100, 'pp': 10, 'power': 65, 'type': 'poison', 'damage_class': 'special', 'effect_short': 'Inflicts double damage if the target is Poisoned.'}
-		current state of Moves={'name': 'round', 'id': 496, 'generation': 'generation-v', 'accuracy': 100, 'pp': 15, 'power': 60, 'type': 'normal', 'damage_class': 'special', 'effect_short': "Has double power if it's used more than once per turn."}
-		current state of Moves={'name': 'echoed-voice', 'id': 497, 'generation': 'generation-v', 'accuracy': 100, 'pp': 15, 'power': 40, 'type': 'normal', 'damage_class': 'special', 'effect_short': 'Power increases by 100% for each consecutive use by any friendly Pokémon, to a maximum of 200.'}
-		current state of Moves={'name': 'grass-pledge', 'id': 520, 'generation': 'generation-v', 'accuracy': 100, 'pp': 10, 'power': 80, 'type': 'grass', 'damage_class': 'special', 'effect_short': 'With Fire Pledge, damages opposing Pokémon for 1/8 their max HP every turn for four turns.'}
-		current state of Moves={'name': 'work-up', 'id': 526, 'generation': 'generation-v', 'accuracy': None, 'pp': 30, 'power': None, 'type': 'normal', 'damage_class': 'status', 'effect_short': "Raises the user's Attack and Special Attack by one stage each."}
-		current state of Moves={'name': 'confide', 'id': 590, 'generation': 'generation-vi', 'accuracy': None, 'pp': 20, 'power': None, 'type': 'normal', 'damage_class': 'status', 'effect_short': "Lowers the target's Special Attack by one stage."}
-	Expanded: TruePokemon: bulbasaur 
-	Id: 1
-	Height: 7
-	Weight: 69
-	Stats: 
-		current state of Stat={'name': 'speed', 'id': 6, 'is_battle_only': False}
-		current state of Stat={'name': 'special-defense', 'id': 5, 'is_battle_only': False}
-		current state of Stat={'name': 'special-attack', 'id': 4, 'is_battle_only': False}
-		current state of Stat={'name': 'defense', 'id': 3, 'is_battle_only': False}
-		current state of Stat={'name': 'attack', 'id': 2, 'is_battle_only': False}
-		current state of Stat={'name': 'hp', 'id': 1, 'is_battle_only': False}
-	Types: 
-		poison
-		grass
-	Ability: 
-		Name: chlorophyll
-		Id: 34
-		Generation: generation-iii
-		Effect: This Pokémon's Speed is doubled during strong sunlight.  This bonus does not count as a stat modifier., 
-		Effect short: Doubles Speed during strong sunlight.
-		Pokemon: bulbasaur ivysaur venusaur oddish gloom vileplume bellsprout weepinbell victreebel exeggcute exeggutor tangela bellossom hoppip skiploom jumpluff sunkern sunflora seedot nuzleaf shiftry tropius cherubi tangrowth leafeon sewaddle swadloon leavanny cottonee whimsicott petilil lilligant maractus deerling sawsbuckName: overgrow
-		Id: 65
-		Generation: generation-iii
-		Effect: When this Pokémon has 1/3 or less of its HP remaining, its grass-type moves inflict 1.5× as much regular damage., 
-		Effect short: Strengthens grass moves to inflict 1.5× damage at 1/3 max HP or less.
-		Pokemon: bulbasaur ivysaur venusaur chikorita bayleef meganium treecko grovyle sceptile turtwig grotle torterra snivy servine serperior pansage simisage chespin quilladin chesnaught rowlet dartrix decidueye
-	Moves: 
-		current state of Moves={'name': 'razor-wind', 'id': 13, 'generation': 'generation-i', 'accuracy': 100, 'pp': 10, 'power': 80, 'type': 'normal', 'damage_class': 'special', 'effect_short': 'Requires a turn to charge before attacking.'}
-		current state of Moves={'name': 'swords-dance', 'id': 14, 'generation': 'generation-i', 'accuracy': None, 'pp': 20, 'power': None, 'type': 'normal', 'damage_class': 'status', 'effect_short': "Raises the user's Attack by two stages."}
-		current state of Moves={'name': 'cut', 'id': 15, 'generation': 'generation-i', 'accuracy': 95, 'pp': 30, 'power': 50, 'type': 'normal', 'damage_class': 'physical', 'effect_short': 'Inflicts regular damage with no additional effect.'}
-		current state of Moves={'name': 'bind', 'id': 20, 'generation': 'generation-i', 'accuracy': 85, 'pp': 20, 'power': 15, 'type': 'normal', 'damage_class': 'physical', 'effect_short': 'Prevents the target from fleeing and inflicts damage for 2-5 turns.'}
-		current state of Moves={'name': 'vine-whip', 'id': 22, 'generation': 'generation-i', 'accuracy': 100, 'pp': 25, 'power': 45, 'type': 'grass', 'damage_class': 'physical', 'effect_short': 'Inflicts regular damage with no additional effect.'}
-		current state of Moves={'name': 'headbutt', 'id': 29, 'generation': 'generation-i', 'accuracy': 100, 'pp': 15, 'power': 70, 'type': 'normal', 'damage_class': 'physical', 'effect_short': 'Has a $effect_chance% chance to make the target flinch.'}
-		current state of Moves={'name': 'tackle', 'id': 33, 'generation': 'generation-i', 'accuracy': 100, 'pp': 35, 'power': 40, 'type': 'normal', 'damage_class': 'physical', 'effect_short': 'Inflicts regular damage with no additional effect.'}
-		current state of Moves={'name': 'body-slam', 'id': 34, 'generation': 'generation-i', 'accuracy': 100, 'pp': 15, 'power': 85, 'type': 'normal', 'damage_class': 'physical', 'effect_short': 'Has a $effect_chance% chance to paralyze the target.'}
-		current state of Moves={'name': 'take-down', 'id': 36, 'generation': 'generation-i', 'accuracy': 85, 'pp': 20, 'power': 90, 'type': 'normal', 'damage_class': 'physical', 'effect_short': 'User receives 1/4 the damage it inflicts in recoil.'}
-		current state of Moves={'name': 'double-edge', 'id': 38, 'generation': 'generation-i', 'accuracy': 100, 'pp': 15, 'power': 120, 'type': 'normal', 'damage_class': 'physical', 'effect_short': 'User receives 1/3 the damage inflicted in recoil.'}
-		current state of Moves={'name': 'growl', 'id': 45, 'generation': 'generation-i', 'accuracy': 100, 'pp': 40, 'power': None, 'type': 'normal', 'damage_class': 'status', 'effect_short': "Lowers the target's Attack by one stage."}
-		current state of Moves={'name': 'strength', 'id': 70, 'generation': 'generation-i', 'accuracy': 100, 'pp': 15, 'power': 80, 'type': 'normal', 'damage_class': 'physical', 'effect_short': 'Inflicts regular damage with no additional effect.'}
-		current state of Moves={'name': 'mega-drain', 'id': 72, 'generation': 'generation-i', 'accuracy': 100, 'pp': 15, 'power': 40, 'type': 'grass', 'damage_class': 'special', 'effect_short': 'Drains half the damage inflicted to heal the user.'}
-		current state of Moves={'name': 'leech-seed', 'id': 73, 'generation': 'generation-i', 'accuracy': 90, 'pp': 10, 'power': None, 'type': 'grass', 'damage_class': 'status', 'effect_short': 'Seeds the target, stealing HP from it every turn.'}
-		current state of Moves={'name': 'growth', 'id': 74, 'generation': 'generation-i', 'accuracy': None, 'pp': 20, 'power': None, 'type': 'normal', 'damage_class': 'status', 'effect_short': "Raises the user's Attack and Special Attack by one stage."}
-		current state of Moves={'name': 'razor-leaf', 'id': 75, 'generation': 'generation-i', 'accuracy': 95, 'pp': 25, 'power': 55, 'type': 'grass', 'damage_class': 'physical', 'effect_short': 'Has an increased chance for a critical hit.'}
-		current state of Moves={'name': 'solar-beam', 'id': 76, 'generation': 'generation-i', 'accuracy': 100, 'pp': 10, 'power': 120, 'type': 'grass', 'damage_class': 'special', 'effect_short': 'Requires a turn to charge before attacking.'}
-		current state of Moves={'name': 'poison-powder', 'id': 77, 'generation': 'generation-i', 'accuracy': 75, 'pp': 35, 'power': None, 'type': 'poison', 'damage_class': 'status', 'effect_short': 'Poisons the target.'}
-		current state of Moves={'name': 'sleep-powder', 'id': 79, 'generation': 'generation-i', 'accuracy': 75, 'pp': 15, 'power': None, 'type': 'grass', 'damage_class': 'status', 'effect_short': 'Puts the target to sleep.'}
-		current state of Moves={'name': 'petal-dance', 'id': 80, 'generation': 'generation-i', 'accuracy': 100, 'pp': 10, 'power': 120, 'type': 'grass', 'damage_class': 'special', 'effect_short': 'Hits every turn for 2-3 turns, then confuses the user.'}
-		current state of Moves={'name': 'string-shot', 'id': 81, 'generation': 'generation-i', 'accuracy': 95, 'pp': 40, 'power': None, 'type': 'bug', 'damage_class': 'status', 'effect_short': "Lowers the target's Speed by two stages."}
-		current state of Moves={'name': 'toxic', 'id': 92, 'generation': 'generation-i', 'accuracy': 90, 'pp': 10, 'power': None, 'type': 'poison', 'damage_class': 'status', 'effect_short': 'Badly poisons the target, inflicting more damage every turn.'}
-		current state of Moves={'name': 'rage', 'id': 99, 'generation': 'generation-i', 'accuracy': 100, 'pp': 20, 'power': 20, 'type': 'normal', 'damage_class': 'physical', 'effect_short': 'If the user is hit after using this move, its Attack rises by one stage.'}
-		current state of Moves={'name': 'mimic', 'id': 102, 'generation': 'generation-i', 'accuracy': None, 'pp': 10, 'power': None, 'type': 'normal', 'damage_class': 'status', 'effect_short': "Copies the target's last used move."}
-		current state of Moves={'name': 'double-team', 'id': 104, 'generation': 'generation-i', 'accuracy': None, 'pp': 15, 'power': None, 'type': 'normal', 'damage_class': 'status', 'effect_short': "Raises the user's evasion by one stage."}
-		current state of Moves={'name': 'defense-curl', 'id': 111, 'generation': 'generation-i', 'accuracy': None, 'pp': 40, 'power': None, 'type': 'normal', 'damage_class': 'status', 'effect_short': "Raises user's Defense by one stage."}
-		current state of Moves={'name': 'light-screen', 'id': 113, 'generation': 'generation-i', 'accuracy': None, 'pp': 30, 'power': None, 'type': 'psychic', 'damage_class': 'status', 'effect_short': 'Reduces damage from special attacks by 50% for five turns.'}
-		current state of Moves={'name': 'reflect', 'id': 115, 'generation': 'generation-i', 'accuracy': None, 'pp': 20, 'power': None, 'type': 'psychic', 'damage_class': 'status', 'effect_short': 'Reduces damage from physical attacks by half.'}
-		current state of Moves={'name': 'bide', 'id': 117, 'generation': 'generation-i', 'accuracy': None, 'pp': 10, 'power': None, 'type': 'normal', 'damage_class': 'physical', 'effect_short': 'User waits for two turns, then hits back for twice the damage it took.'}
-		current state of Moves={'name': 'sludge', 'id': 124, 'generation': 'generation-i', 'accuracy': 100, 'pp': 20, 'power': 65, 'type': 'poison', 'damage_class': 'special', 'effect_short': 'Has a $effect_chance% chance to poison the target.'}
-		current state of Moves={'name': 'skull-bash', 'id': 130, 'generation': 'generation-i', 'accuracy': 100, 'pp': 10, 'power': 130, 'type': 'normal', 'damage_class': 'physical', 'effect_short': "Raises the user's Defense by one stage.  User charges for one turn before attacking."}
-		current state of Moves={'name': 'amnesia', 'id': 133, 'generation': 'generation-i', 'accuracy': None, 'pp': 20, 'power': None, 'type': 'psychic', 'damage_class': 'status', 'effect_short': "Raises the user's Special Defense by two stages."}
-		current state of Moves={'name': 'flash', 'id': 148, 'generation': 'generation-i', 'accuracy': 100, 'pp': 20, 'power': None, 'type': 'normal', 'damage_class': 'status', 'effect_short': "Lowers the target's accuracy by one stage."}
-		current state of Moves={'name': 'rest', 'id': 156, 'generation': 'generation-i', 'accuracy': None, 'pp': 10, 'power': None, 'type': 'psychic', 'damage_class': 'status', 'effect_short': 'User sleeps for two turns, completely healing itself.'}
-		current state of Moves={'name': 'substitute', 'id': 164, 'generation': 'generation-i', 'accuracy': None, 'pp': 10, 'power': None, 'type': 'normal', 'damage_class': 'status', 'effect_short': "Transfers 1/4 of the user's max HP into a doll, protecting the user from further damage or status changes until it breaks."}
-		current state of Moves={'name': 'snore', 'id': 173, 'generation': 'generation-ii', 'accuracy': 100, 'pp': 15, 'power': 50, 'type': 'normal', 'damage_class': 'special', 'effect_short': 'Has a $effect_chance% chance to make the target flinch.  Only works if the user is sleeping.'}
-		current state of Moves={'name': 'curse', 'id': 174, 'generation': 'generation-ii', 'accuracy': None, 'pp': 10, 'power': None, 'type': 'ghost', 'damage_class': 'status', 'effect_short': 'Ghosts pay half their max HP to hurt the target every turn.  Others decrease Speed but raise Attack and Defense.'}
-		current state of Moves={'name': 'protect', 'id': 182, 'generation': 'generation-ii', 'accuracy': None, 'pp': 10, 'power': None, 'type': 'normal', 'damage_class': 'status', 'effect_short': 'Prevents any moves from hitting the user this turn.'}
-		current state of Moves={'name': 'sludge-bomb', 'id': 188, 'generation': 'generation-ii', 'accuracy': 100, 'pp': 10, 'power': 90, 'type': 'poison', 'damage_class': 'special', 'effect_short': 'Has a $effect_chance% chance to poison the target.'}
-		current state of Moves={'name': 'mud-slap', 'id': 189, 'generation': 'generation-ii', 'accuracy': 100, 'pp': 10, 'power': 20, 'type': 'ground', 'damage_class': 'special', 'effect_short': "Has a $effect_chance% chance to lower the target's accuracy by one stage."}
-		current state of Moves={'name': 'giga-drain', 'id': 202, 'generation': 'generation-ii', 'accuracy': 100, 'pp': 10, 'power': 75, 'type': 'grass', 'damage_class': 'special', 'effect_short': 'Drains half the damage inflicted to heal the user.'}
-		current state of Moves={'name': 'endure', 'id': 203, 'generation': 'generation-ii', 'accuracy': None, 'pp': 10, 'power': None, 'type': 'normal', 'damage_class': 'status', 'effect_short': "Prevents the user's HP from lowering below 1 this turn."}
-		current state of Moves={'name': 'charm', 'id': 204, 'generation': 'generation-ii', 'accuracy': 100, 'pp': 20, 'power': None, 'type': 'fairy', 'damage_class': 'status', 'effect_short': "Lowers the target's Attack by two stages."}
-		current state of Moves={'name': 'swagger', 'id': 207, 'generation': 'generation-ii', 'accuracy': 85, 'pp': 15, 'power': None, 'type': 'normal', 'damage_class': 'status', 'effect_short': "Raises the target's Attack by two stages and confuses the target."}
-		current state of Moves={'name': 'fury-cutter', 'id': 210, 'generation': 'generation-ii', 'accuracy': 95, 'pp': 20, 'power': 40, 'type': 'bug', 'damage_class': 'physical', 'effect_short': 'Power doubles every turn this move is used in succession after the first, maxing out after five turns.'}
-		current state of Moves={'name': 'attract', 'id': 213, 'generation': 'generation-ii', 'accuracy': 100, 'pp': 15, 'power': None, 'type': 'normal', 'damage_class': 'status', 'effect_short': 'Target falls in love if it has the opposite gender, and has a 50% chance to refuse attacking the user.'}
-		current state of Moves={'name': 'sleep-talk', 'id': 214, 'generation': 'generation-ii', 'accuracy': None, 'pp': 10, 'power': None, 'type': 'normal', 'damage_class': 'status', 'effect_short': "Randomly uses one of the user's other three moves.  Only works if the user is sleeping."}
-		current state of Moves={'name': 'return', 'id': 216, 'generation': 'generation-ii', 'accuracy': 100, 'pp': 20, 'power': None, 'type': 'normal', 'damage_class': 'physical', 'effect_short': 'Power increases with happiness, up to a maximum of 102.'}
-		current state of Moves={'name': 'frustration', 'id': 218, 'generation': 'generation-ii', 'accuracy': 100, 'pp': 20, 'power': None, 'type': 'normal', 'damage_class': 'physical', 'effect_short': 'Power increases as happiness decreases, up to a maximum of 102.'}
-		current state of Moves={'name': 'safeguard', 'id': 219, 'generation': 'generation-ii', 'accuracy': None, 'pp': 25, 'power': None, 'type': 'normal', 'damage_class': 'status', 'effect_short': "Protects the user's field from major status ailments and confusion for five turns."}
-		current state of Moves={'name': 'sweet-scent', 'id': 230, 'generation': 'generation-ii', 'accuracy': 100, 'pp': 20, 'power': None, 'type': 'normal', 'damage_class': 'status', 'effect_short': "Lowers the target's evasion by one stage."}
-		current state of Moves={'name': 'synthesis', 'id': 235, 'generation': 'generation-ii', 'accuracy': None, 'pp': 5, 'power': None, 'type': 'grass', 'damage_class': 'status', 'effect_short': 'Heals the user by half its max HP.  Affected by weather.'}
-		current state of Moves={'name': 'hidden-power', 'id': 237, 'generation': 'generation-ii', 'accuracy': 100, 'pp': 15, 'power': 60, 'type': 'normal', 'damage_class': 'special', 'effect_short': "Power and type depend upon user's IVs.  Power can range from 30 to 70."}
-		current state of Moves={'name': 'sunny-day', 'id': 241, 'generation': 'generation-ii', 'accuracy': None, 'pp': 5, 'power': None, 'type': 'fire', 'damage_class': 'status', 'effect_short': 'Changes the weather to sunny for five turns.'}
-		current state of Moves={'name': 'rock-smash', 'id': 249, 'generation': 'generation-ii', 'accuracy': 100, 'pp': 15, 'power': 40, 'type': 'fighting', 'damage_class': 'physical', 'effect_short': "Has a $effect_chance% chance to lower the target's Defense by one stage."}
-		current state of Moves={'name': 'facade', 'id': 263, 'generation': 'generation-iii', 'accuracy': 100, 'pp': 20, 'power': 70, 'type': 'normal', 'damage_class': 'physical', 'effect_short': 'Power doubles if user is burned, paralyzed, or poisoned.'}
-		current state of Moves={'name': 'nature-power', 'id': 267, 'generation': 'generation-iii', 'accuracy': None, 'pp': 20, 'power': None, 'type': 'normal', 'damage_class': 'status', 'effect_short': 'Uses a move which depends upon the terrain.'}
-		current state of Moves={'name': 'ingrain', 'id': 275, 'generation': 'generation-iii', 'accuracy': None, 'pp': 20, 'power': None, 'type': 'grass', 'damage_class': 'status', 'effect_short': 'Prevents the user from leaving battle.  User regains 1/16 of its max HP every turn.'}
-		current state of Moves={'name': 'knock-off', 'id': 282, 'generation': 'generation-iii', 'accuracy': 100, 'pp': 20, 'power': 65, 'type': 'dark', 'damage_class': 'physical', 'effect_short': 'Target drops its held item.'}
-		current state of Moves={'name': 'secret-power', 'id': 290, 'generation': 'generation-iii', 'accuracy': 100, 'pp': 20, 'power': 70, 'type': 'normal', 'damage_class': 'physical', 'effect_short': 'Has a $effect_chance% chance to inflict a status effect which depends upon the terrain.'}
-		current state of Moves={'name': 'grass-whistle', 'id': 320, 'generation': 'generation-iii', 'accuracy': 55, 'pp': 15, 'power': None, 'type': 'grass', 'damage_class': 'status', 'effect_short': 'Puts the target to sleep.'}
-		current state of Moves={'name': 'bullet-seed', 'id': 331, 'generation': 'generation-iii', 'accuracy': 100, 'pp': 30, 'power': 25, 'type': 'grass', 'damage_class': 'physical', 'effect_short': 'Hits 2-5 times in one turn.'}
-		current state of Moves={'name': 'magical-leaf', 'id': 345, 'generation': 'generation-iii', 'accuracy': None, 'pp': 20, 'power': 60, 'type': 'grass', 'damage_class': 'special', 'effect_short': 'Never misses.'}
-		current state of Moves={'name': 'natural-gift', 'id': 363, 'generation': 'generation-iv', 'accuracy': 100, 'pp': 15, 'power': None, 'type': 'normal', 'damage_class': 'physical', 'effect_short': 'Power and type depend on the held berry.'}
-		current state of Moves={'name': 'worry-seed', 'id': 388, 'generation': 'generation-iv', 'accuracy': 100, 'pp': 10, 'power': None, 'type': 'grass', 'damage_class': 'status', 'effect_short': "Changes the target's ability to Insomnia."}
-		current state of Moves={'name': 'seed-bomb', 'id': 402, 'generation': 'generation-iv', 'accuracy': 100, 'pp': 15, 'power': 80, 'type': 'grass', 'damage_class': 'physical', 'effect_short': 'Inflicts regular damage with no additional effect.'}
-		current state of Moves={'name': 'energy-ball', 'id': 412, 'generation': 'generation-iv', 'accuracy': 100, 'pp': 10, 'power': 90, 'type': 'grass', 'damage_class': 'special', 'effect_short': "Has a $effect_chance% chance to lower the target's Special Defense by one stage."}
-		current state of Moves={'name': 'leaf-storm', 'id': 437, 'generation': 'generation-iv', 'accuracy': 90, 'pp': 5, 'power': 130, 'type': 'grass', 'damage_class': 'special', 'effect_short': "Lowers the user's Special Attack by two stages after inflicting damage."}
-		current state of Moves={'name': 'power-whip', 'id': 438, 'generation': 'generation-iv', 'accuracy': 85, 'pp': 10, 'power': 120, 'type': 'grass', 'damage_class': 'physical', 'effect_short': 'Inflicts regular damage with no additional effect.'}
-		current state of Moves={'name': 'captivate', 'id': 445, 'generation': 'generation-iv', 'accuracy': 100, 'pp': 20, 'power': None, 'type': 'normal', 'damage_class': 'status', 'effect_short': "Lowers the target's Special Attack by two stages if it's the opposite gender."}
-		current state of Moves={'name': 'grass-knot', 'id': 447, 'generation': 'generation-iv', 'accuracy': 100, 'pp': 20, 'power': None, 'type': 'grass', 'damage_class': 'special', 'effect_short': 'Inflicts more damage to heavier targets, with a maximum of 120 power.'}
-		current state of Moves={'name': 'venoshock', 'id': 474, 'generation': 'generation-v', 'accuracy': 100, 'pp': 10, 'power': 65, 'type': 'poison', 'damage_class': 'special', 'effect_short': 'Inflicts double damage if the target is Poisoned.'}
-		current state of Moves={'name': 'round', 'id': 496, 'generation': 'generation-v', 'accuracy': 100, 'pp': 15, 'power': 60, 'type': 'normal', 'damage_class': 'special', 'effect_short': "Has double power if it's used more than once per turn."}
-		current state of Moves={'name': 'echoed-voice', 'id': 497, 'generation': 'generation-v', 'accuracy': 100, 'pp': 15, 'power': 40, 'type': 'normal', 'damage_class': 'special', 'effect_short': 'Power increases by 100% for each consecutive use by any friendly Pokémon, to a maximum of 200.'}
-		current state of Moves={'name': 'grass-pledge', 'id': 520, 'generation': 'generation-v', 'accuracy': 100, 'pp': 10, 'power': 80, 'type': 'grass', 'damage_class': 'special', 'effect_short': 'With Fire Pledge, damages opposing Pokémon for 1/8 their max HP every turn for four turns.'}
-		current state of Moves={'name': 'work-up', 'id': 526, 'generation': 'generation-v', 'accuracy': None, 'pp': 30, 'power': None, 'type': 'normal', 'damage_class': 'status', 'effect_short': "Raises the user's Attack and Special Attack by one stage each."}
-		current state of Moves={'name': 'grassy-terrain', 'id': 580, 'generation': 'generation-vi', 'accuracy': None, 'pp': 10, 'power': None, 'type': 'grass', 'damage_class': 'status', 'effect_short': 'For five turns, heals all Pokémon on the ground for 1/16 max HP each turn and strengthens their grass moves to 1.5× their power.'}
-		current state of Moves={'name': 'confide', 'id': 590, 'generation': 'generation-vi', 'accuracy': None, 'pp': 20, 'power': None, 'type': 'normal', 'damage_class': 'status', 'effect_short': "Lowers the target's Special Attack by one stage."}
-	Expanded: True
+Name: stench
+Id: 1
+Generation: generation-iii
+Effect: This Pokémon's damaging moves have a 10% chance to make the target flinch with each hit if they do not already cause flinching as a secondary effect.  This ability does not stack with a held item.  Overworld: The wild encounter rate is halved while this Pokémon is first in the party., 
+Effect short: Has a 10% chance of making target Pokémon flinch with each hit.
+Pokemon: gloom grimer muk stunky skuntank trubbish garbodorName: drizzle
+Id: 2
+Generation: generation-iii
+Effect: The weather changes to rain when this Pokémon enters battle and does not end unless replaced by another weather condition.  If multiple Pokémon with this ability, drought, sand stream, or snow warning are sent out at the same time, the abilities will activate in order of Speed, respecting trick room.  Each ability's weather will cancel the previous weather, and only the weather summoned by the slowest of the Pokémon will stay., 
+Effect short: Summons rain that lasts indefinitely upon entering battle.
+Pokemon: politoed pelipper kyogreName: speed-boost
+Id: 3
+Generation: generation-iii
+Effect: This Pokémon's Speed rises one stage after each turn., 
+Effect short: Raises Speed one stage after each turn.
+Pokemon: yanma torchic combusken blaziken ninjask carvanha sharpedo yanmega venipede whirlipede scolipede blaziken-megaName: battle-armor
+Id: 4
+Generation: generation-iii
+Effect: Moves cannot score critical hits against this Pokémon.  This ability functions identically to shell armor., 
+Effect short: Protects against critical hits.
+Pokemon: cubone marowak kabuto kabutops anorith armaldo skorupi drapion type-nullName: sturdy
+Id: 5
+Generation: generation-iii
+Effect: When this Pokémon is at full HP, any hit that would knock it out will instead leave it with 1 HP.  Regardless of its current HP, it is also immune to the one-hit KO moves: fissure, guillotine, horn drill, and sheer cold.  If this Pokémon is holding a focus sash, this ability takes precedence and the item will not be consumed., 
+Effect short: Prevents being KOed from full HP, leaving 1 HP instead.  Protects against the one-hit KO moves regardless of HP.
+Pokemon: geodude graveler golem magnemite magneton onix sudowoodo pineco forretress steelix shuckle skarmory donphan nosepass aron lairon aggron relicanth regirock shieldon bastiodon bonsly magnezone probopass roggenrola boldore gigalith sawk dwebble crustle tirtouga carracosta tyrunt carbink bergmite avalugg togedemaru cosmoem geodude-alola graveler-alola golem-alola togedemaru-totemName: damp
+Id: 6
+Generation: generation-iii
+Effect: While this Pokémon is in battle, self destruct and explosion will fail and aftermath will not take effect., 
+Effect short: Prevents self destruct, explosion, and aftermath from working while the Pokémon is in battle.
+Pokemon: paras parasect psyduck golduck poliwag poliwhirl poliwrath horsea seadra politoed wooper quagsire kingdra mudkip marshtomp swampert frillish jellicentName: limber
+Id: 7
+Generation: generation-iii
+Effect: This Pokémon cannot be paralyzed.  If a Pokémon is paralyzed and acquires this ability, its paralysis is healed; this includes when regaining a lost ability upon leaving battle., 
+Effect short: Prevents paralysis.
+Pokemon: persian hitmonlee ditto buneary lopunny glameow purrloin liepard stunfisk hawlucha mareanie toxapexName: sand-veil
+Id: 8
+Generation: generation-iii
+Effect: During a sandstorm, this Pokémon has 1.25× its evasion, and it does not take sandstorm damage regardless of type.  The evasion bonus does not count as a stat modifier.  Overworld: If the lead Pokémon has this ability, the wild encounter rate is halved in a sandstorm., 
+Effect short: Increases evasion to 1.25× during a sandstorm.  Protects against sandstorm damage.
+Pokemon: sandshrew sandslash diglett dugtrio geodude graveler golem gligar phanpy donphan larvitar cacnea cacturne gible gabite garchomp gliscor stunfisk helioptile heliolisk sandygast palossand diglett-alola dugtrio-alolaName: static
+Id: 9
+Generation: generation-iii
+Effect: Whenever a move makes contact with this Pokémon, the move's user has a 30% chance of being paralyzed.  Pokémon that are immune to electric-type moves can still be paralyzed by this ability.  Overworld: If the lead Pokémon has this ability, there is a 50% chance that encounters will be with an electric Pokémon, if applicable., 
+Effect short: Has a 30% chance of paralyzing attacking Pokémon on contact.
+Pokemon: pikachu raichu voltorb electrode electabuzz zapdos pichu mareep flaaffy ampharos elekid electrike manectric emolga stunfisk pikachu-rock-star pikachu-belle pikachu-pop-star pikachu-phd pikachu-libre pikachu-cosplay pikachu-original-cap pikachu-hoenn-cap pikachu-sinnoh-cap pikachu-unova-cap pikachu-kalos-cap pikachu-alola-cap pikachu-partner-capName: volt-absorb
+Id: 10
+Generation: generation-iii
+Effect: Whenever an electric-type move hits this Pokémon, it heals for 1/4 of its maximum HP, negating any other effect on it.  This ability will not take effect if this Pokémon is ground-type and thus immune to Electric moves.  Electric moves will ignore this Pokémon's substitute.  This effect includes non-damaging moves, i.e. thunder wave., 
+Effect short: Absorbs electric moves, healing for 1/4 max HP.
+Pokemon: jolteon chinchou lanturn minun pachirisu zeraora thundurus-therian

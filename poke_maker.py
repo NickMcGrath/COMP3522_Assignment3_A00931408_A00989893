@@ -116,7 +116,7 @@ class Driver:
                 self.arguments.mode,
                 name_id,
                 self.arguments.expanded,
-                10  # number of threads each request can expand to
+                4  # number of threads each request can expand to
             ))
         # download the objects
         downloader = PokeObjectDownloader(pokedex_requests,
