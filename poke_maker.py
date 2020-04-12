@@ -1,12 +1,11 @@
+"""
+This module if for Creating and displaying or saving information about
+Pokemon.
+"""
 import argparse
-import time
-import threading
 import requests
 import concurrent.futures
 import multiprocessing
-
-from prettytable import PrettyTable
-
 from pokedex_maker import PokedexMaker
 from pokeretriever.pokeretriever import *
 
@@ -20,7 +19,7 @@ class Arguments:
                  input_file: str = None, output_file: str = None):
         """
         Initialize a Arguments.
-        :param mode string (but wil be enum on final assignment)
+        :param mode string
         :param input_data str, data of the intended request, usually the
         name of the id of the object being queried
         :param expanded bool
@@ -77,11 +76,26 @@ class ArgumentParser:
 
 
 class Driver:
+    """
+    The program driver.
+
+    Takes command line arguments, gets the pokemon data, outputs the
+    data in specified format.
+    """
+
     def __init__(self):
+        """
+        Initialize a Driver with an empty PokedexObject list and
+        arguments.
+        """
         self.pokedex_objects = None  # PokedexObject
         self.arguments = None  # Arguments
 
     def start(self):
+        """
+        Takes command line arguments, gets the pokemon data, outputs the
+        data in specified format.
+        """
         self.arguments = ArgumentParser.setup_commandline_request()
 
         if self.arguments.input_file is not None:
@@ -89,15 +103,18 @@ class Driver:
         else:
             name_id_list = [self.arguments.input_data]
         pokedex_requests = []
+        # append requests to list
         for name_id in name_id_list:
             pokedex_requests.append(PokedexRequest(
                 self.arguments.mode,
                 name_id,
-                self.arguments.expanded
+                self.arguments.expanded,
+                10  # number of threads each request can expand to
             ))
-
-        tp = ThreadPool(pokedex_requests, multiprocessing.cpu_count())
-        self.pokedex_objects = tp.download()
+        # download the objects
+        downloader = PokeObjectDownloader(pokedex_requests,
+                                          multiprocessing.cpu_count())
+        self.pokedex_objects = downloader.download()
 
         if self.arguments.output_file is not None:
             file_reporter = TextFileReporter(self.arguments.output_file)
@@ -109,7 +126,13 @@ class Driver:
                             terminal_reporter.make_report)
             report.export()
 
-    def _get_name_id_list(self, file_name) -> list:
+    @staticmethod
+    def _get_name_id_list(file_name) -> list:
+        """
+        Helper method to get a list of pokeObject names or ids.
+        :param file_name: str, the file name.
+        :return: list of pokeObject names
+        """
         with open(file_name, mode='r', encoding='utf-8') as file:
             return [line.strip('\n') for line in file]
 
@@ -130,26 +153,12 @@ class Report:
         self.formatter = formatter
 
     def export(self):
-
+        """
+        Exports the pokedex objects to the appropriate formatter.
+        :return:
+        """
         self.formatter(self.pokedex_objects)
 
-    # def table_maker(self, title: str, data: list, labels: list,
-    #                 output_name, align: str) -> None:
-    #     """
-    #     Creates a txt table from provided information.
-    #     :param title: str
-    #     :param data: list of Series objects
-    #     :param labels: list
-    #     :param output_name: str
-    #     :param align: str
-    #     """
-    #     table = PrettyTable()
-    #     table.align = align
-    #     table.title = title
-    #     table.field_names = labels
-    #     for i in range(0, len(data[0])):
-    #         table.add_row([data[0][i], data[1][i]])
-    #     return str(table)
 
 class TerminalReporter:
     """
@@ -159,9 +168,16 @@ class TerminalReporter:
     """
 
     def __init__(self):
+        """
+        Initialize a TerminalReporter
+        """
         pass
 
     def make_report(self, pokedex_objects: list):
+        """
+        Makes a terminal report.
+        :param pokedex_objects: list of PokeObjects
+        """
         print('Terminal Report')
         for pokedex in pokedex_objects:
             print(pokedex)
@@ -175,20 +191,46 @@ class TextFileReporter:
     """
 
     def __init__(self, file_name: str):
+        """
+        Initialize a TextFileReporter.
+        :param file_name: str, the output file name.
+        """
         self.file_name = file_name
 
     def make_report(self, pokedex_objects: list):
+        """
+        Makes a text file report.
+        :param pokedex_objects: list of PokeObjects
+        """
         with open(self.file_name, 'w') as file:
             for pokedex in pokedex_objects:
                 file.write(str(pokedex))
 
 
-class ThreadPool:
+class PokeObjectDownloader:
+    """
+    PokeObjectDownloader takes requests for PokedexObjects and gets
+    them.
+    """
+
     def __init__(self, pokedex_requests: list, max_workers: int):
+        """
+        Initialize a PokeObjectDownloader.
+        Note: the max threads the downloader can use is the max request
+        objects it can process at a time. Each request object has a
+        parameter of how many threads it can use as well (multiplying
+        the threads total).
+        :param pokedex_requests: list of requests
+        :param max_workers: the max threads the downloader can use.
+        """
         self.pokedex_requests = pokedex_requests
         self.max_workers = max_workers
 
     def download(self):
+        """
+        Processes each request in the list.
+        :return: list of PokeObjects.
+        """
         with concurrent.futures.ThreadPoolExecutor(
                 max_workers=self.max_workers) as executor:
             with requests.Session() as session:
@@ -200,6 +242,10 @@ class ThreadPool:
 
 
 def main():
+    """
+    Starts the program driver.
+    :return: int
+    """
     driver = Driver()
     driver.start()
 

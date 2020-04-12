@@ -3,7 +3,6 @@ This module contains the code required to create an aiohttp session and
 execute requests, parse the JSON and instantiate the appropriate object,
 and houses the Pokemon, Ability, Move, and Stat classes.
 """
-import aiohttp
 
 
 class PokedexRequest:
@@ -20,7 +19,7 @@ class PokedexRequest:
         :param name_or_id the name or id number of the Pokemon
         :param expanded bool an optional flag that prompts the pokedex to do a
         sub-query to get more information about a particular attribute
-        :param session
+        :param num_threads the number of threads the request can use.
         """
         self.mode = mode
         self.name_or_id = name_or_id
@@ -133,7 +132,7 @@ class Ability(PokedexObject):
 
     def __str__(self):
         """Returns the current state of the Ability"""
-        effect = self.effect.replace("\n"," ")
+        effect = self.effect.replace("\n", " ")
         effect_short = self.effect_short.replace('\n', ' ')
         result = f'Name: {self.name}' \
                  f'\nId: {self.id}' \

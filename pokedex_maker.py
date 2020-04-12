@@ -1,21 +1,35 @@
+"""
+Module contains a facade to create PokeObjects from a request.
+"""
 import concurrent
-
-import requests
 
 from pokeretriever.pokeretriever import *
 
 
 class PokedexMaker:
+    """
+    Facade to create PokeObjects from a request.
+    """
     session = None
 
     def __init__(self, session):
+        """
+        Initialize a PokedexMaker.
+        :param session: a requests.Session()
+        """
         PokedexMaker.session = session
 
     @classmethod
     def execute_request(cls, pokedex_request: PokedexRequest) -> PokedexObject:
+        """
+        Creates a PokeObject from a request.
+        :param pokedex_request: PokedexRequest
+        :return: PokedexObject
+        """
         if pokedex_request.mode == 'pokemon':
             return cls._get_pokemon(pokedex_request.name_or_id,
-                                    pokedex_request.expanded)
+                                    pokedex_request.expanded,
+                                    pokedex_request.num_threads)
         elif pokedex_request.mode == 'stat':
             return cls._get_stats(pokedex_request.name_or_id)
         elif pokedex_request.mode == 'ability':
@@ -24,13 +38,20 @@ class PokedexMaker:
             return cls._get_move(pokedex_request.name_or_id)
 
     @classmethod
-    def _get_pokemon(cls, name: str, expanded=False):
+    def _get_pokemon(cls, name: str, expanded=False, num_threads=1):
+        """
+        Helper method to get a Pokemon.
+        :param name: name or id of the pokemon
+        :param expanded: bool
+        :param num_threads: int max number of threads for request
+        :return: Pokemon
+        """
         url = f'https://pokeapi.co/api/v2/pokemon/{name}'
         with cls.session.get(url) as response:
             json_response = response.json()
             if expanded:
                 with concurrent.futures.ThreadPoolExecutor(
-                        max_workers=10) as executor:
+                        max_workers=num_threads) as executor:
                     stats_param = [stat['stat']['name'] for stat in
                                    json_response['stats']]
                     stats_list = list(executor.map(cls._get_stats,
@@ -78,6 +99,11 @@ class PokedexMaker:
 
     @classmethod
     def _get_stats(cls, name: str):
+        """
+        Helper method to get Stats.
+        :param name: the name of the stat
+        :return: Stat
+        """
         url = f'https://pokeapi.co/api/v2/stat/{name}'
         with cls.session.get(url) as response:
             json_response = response.json()
@@ -89,6 +115,11 @@ class PokedexMaker:
 
     @classmethod
     def _get_abilities(cls, name: str):
+        """
+        Helper method to get Ability.
+        :param name: the name of the Ability
+        :return: Ability
+        """
         url = f'https://pokeapi.co/api/v2/ability/{name}'
         with cls.session.get(url) as response:
             json_response = response.json()
@@ -105,6 +136,11 @@ class PokedexMaker:
 
     @classmethod
     def _get_move(cls, name: str):
+        """
+        Helper method to get Move.
+        :param name: the name of the Move
+        :return: Move
+        """
         url = f'https://pokeapi.co/api/v2/move/{name}'
         with cls.session.get(url) as response:
             json_response = response.json()
@@ -119,19 +155,3 @@ class PokedexMaker:
                 damage_class=json_response['damage_class']['name'],
                 effect_short=json_response['effect_entries'][0]['short_effect']
             )
-
-
-def test_method():
-    with concurrent.futures.ThreadPoolExecutor(
-            max_workers=1) as executor:
-        with requests.Session() as session:
-            pokedex_maker = PokedexMaker(session)
-            result = executor.map(pokedex_maker._get_pokemon, (1,))
-
-    results = list(result)
-    # print(list(result))
-    print(results[0])
-
-
-if __name__ == '__main__':
-    test_method()
