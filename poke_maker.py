@@ -6,7 +6,8 @@ import argparse
 import requests
 import concurrent.futures
 import multiprocessing
-from pokedex_maker import PokedexMaker
+import sys
+from pokedex_maker import InvalidPokeObject, PokedexMaker
 from pokeretriever.pokeretriever import *
 
 
@@ -99,7 +100,13 @@ class Driver:
         self.arguments = ArgumentParser.setup_commandline_request()
 
         if self.arguments.input_file is not None:
-            name_id_list = self._get_name_id_list(self.arguments.input_file)
+            try:
+                name_id_list = self._get_name_id_list(
+                    self.arguments.input_file)
+            except FileNotFoundError:
+                print("Could not find your file "
+                      ":( ensure it is at project level")
+                sys.exit(1)
         else:
             name_id_list = [self.arguments.input_data]
         pokedex_requests = []
@@ -114,7 +121,11 @@ class Driver:
         # download the objects
         downloader = PokeObjectDownloader(pokedex_requests,
                                           multiprocessing.cpu_count())
-        self.pokedex_objects = downloader.download()
+        try:
+            self.pokedex_objects = downloader.download()
+        except InvalidPokeObject as e:
+            print(e)
+            sys.exit(2)
 
         if self.arguments.output_file is not None:
             file_reporter = TextFileReporter(self.arguments.output_file)
@@ -133,6 +144,7 @@ class Driver:
         :param file_name: str, the file name.
         :return: list of pokeObject names
         """
+
         with open(file_name, mode='r', encoding='utf-8') as file:
             return [line.strip('\n') for line in file]
 
@@ -235,9 +247,9 @@ class PokeObjectDownloader:
                 max_workers=self.max_workers) as executor:
             with requests.Session() as session:
                 pokedex_maker = PokedexMaker(session)
-
                 result = executor.map(pokedex_maker.execute_request,
                                       self.pokedex_requests)
+
         return list(result)
 
 

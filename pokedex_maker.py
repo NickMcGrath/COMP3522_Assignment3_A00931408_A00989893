@@ -6,6 +6,19 @@ import concurrent
 from pokeretriever.pokeretriever import *
 
 
+class InvalidPokeObject(Exception):
+    """Exception for Invalid PokeObjects."""
+
+    def __init__(self, name: str):
+        """Initialize the exception with the name that did not work."""
+        super().__init__()
+        self.name = name
+
+    def __str__(self):
+        """display the name that cause the error."""
+        return f'Invalid PokeObject {self.name}'
+
+
 class PokedexMaker:
     """
     Facade to create PokeObjects from a request.
@@ -48,6 +61,8 @@ class PokedexMaker:
         """
         url = f'https://pokeapi.co/api/v2/pokemon/{name}'
         with cls.session.get(url) as response:
+            if str(response.content) == "b'Not Found'":
+                raise InvalidPokeObject(name)
             json_response = response.json()
             if expanded:
                 with concurrent.futures.ThreadPoolExecutor(
@@ -106,6 +121,8 @@ class PokedexMaker:
         """
         url = f'https://pokeapi.co/api/v2/stat/{name}'
         with cls.session.get(url) as response:
+            if str(response.content) == "b'Not Found'":
+                raise InvalidPokeObject(name)
             json_response = response.json()
             return Stat(
                 name=json_response['name'],
@@ -122,6 +139,8 @@ class PokedexMaker:
         """
         url = f'https://pokeapi.co/api/v2/ability/{name}'
         with cls.session.get(url) as response:
+            if str(response.content) == "b'Not Found'":
+                raise InvalidPokeObject(name)
             json_response = response.json()
             return Ability(
                 name=json_response['name'],
@@ -143,6 +162,8 @@ class PokedexMaker:
         """
         url = f'https://pokeapi.co/api/v2/move/{name}'
         with cls.session.get(url) as response:
+            if str(response.content) == "b'Not Found'":
+                raise InvalidPokeObject(name)
             json_response = response.json()
             return Move(
                 name=json_response['name'],
