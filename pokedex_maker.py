@@ -16,7 +16,7 @@ class InvalidPokeObject(Exception):
 
     def __str__(self):
         """display the name that cause the error."""
-        return f'Invalid PokeObject {self.name}'
+        return f'Invalid PokeObject: "{self.name}"'
 
 
 class PokedexMaker:
