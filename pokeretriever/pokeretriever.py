@@ -11,7 +11,8 @@ class PokedexRequest:
     Request has the values needed to make a request to get pokemon data.
     """
 
-    def __init__(self, mode: str, name_or_id: str, expanded: bool):
+    def __init__(self, mode: str, name_or_id: str, expanded: bool,
+                 num_threads=1):
         """
         Initialize a request.
         :param mode string (but wil be enum on final assignment)
@@ -24,6 +25,7 @@ class PokedexRequest:
         self.mode = mode
         self.name_or_id = name_or_id
         self.expanded = expanded
+        self.num_threads = num_threads
 
     def __str__(self):
         """Returns the current state of the request"""
